@@ -18,7 +18,7 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.0.2",
     "parcel-bundler": "^1.12.1",
-    "prettier": "^1.16.1"
+    "prettier": "^1.19.1"
   },
   "scripts": {
     "clear-build-cache": "rm -rf .cache/ dist/",
@@ -29,5 +29,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brian Holt <btholt+complete-intro-to-react@gmail.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "keywords": []
 }
