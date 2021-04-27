@@ -1,5 +1,6 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
+import Carousel from "./Carousel";
 
 // **  hooks component of detail component:
 // **  the new way of doing stateful component
@@ -18,13 +19,15 @@ import pet from "@frontendmasters/pet";
 // **  now is replaced by HOOKS mostly
 
 class Details extends React.PureComponent {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      loading: true
-    };
-  }
+  //   this.state = {
+  //     loading: true
+  //   };
+  // }
+
+  state = { loading: true };
 
   componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) => {
@@ -41,7 +44,23 @@ class Details extends React.PureComponent {
   }
 
   render() {
-    return;
+    if (this.state.loading) {
+      return <h1>loading...</h1>;
+    }
+
+    const { animal, breed, location, description, name, media } = this.state;
+
+    return (
+      <div className="details">
+        <Carousel media={media} />
+        <div>
+          <h1>{name}</h1>
+          <h2>{`${animal} - ${breed} - ${location}`}</h2>
+          <button> Adopt {name}</button>
+          <p>{description}</p>
+        </div>
+      </div>
+    );
   }
 }
 
